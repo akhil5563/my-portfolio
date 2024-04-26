@@ -1,14 +1,16 @@
 /*===== MENU SHOW =====*/
 const showMenu = (toggleId, navId) =>{
+    console.log("showMenu called"); // Log to check function call
     const toggle = document.getElementById(toggleId),
-    nav = document.getElementById(navId)
+    nav = document.getElementById(navId);
 
     if(toggle && nav){
         toggle.addEventListener('click', ()=>{
             nav.classList.toggle('show')
-        })
+        });
     }
 }
+
 showMenu('nav-toggle','nav-menu')
 /* Certification*/
 document.addEventListener("DOMContentLoaded", function() {
@@ -41,6 +43,31 @@ function linkAction(){
     navMenu.classList.remove('show')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
+document.addEventListener("DOMContentLoaded", function() {
+    // Scroll to the top of the page immediately after it is loaded
+    window.scrollTo(0, 0);
+
+    // Your existing code
+    const allItems = document.querySelectorAll('.certification__item');
+    const showMoreBtn = document.getElementById('show-more-btn');
+
+    if (allItems.length > 8) {
+        for (let i = 8; i < allItems.length; i++) {
+            allItems[i].style.display = 'none';
+        }
+    }
+
+    showMoreBtn.addEventListener('click', function() {
+        for (let i = 8; i < allItems.length; i++) {
+            allItems[i].style.display = 'block';
+        }
+        showMoreBtn.style.display = 'none';
+    });
+
+    // Other existing scripts
+});
+
+// Your other existing DOMContentLoaded or other event scripts
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
@@ -66,13 +93,14 @@ window.addEventListener('scroll', scrollActive)
 /*===== SCROLL REVEAL ANIMATION =====*/
 const sr = ScrollReveal({
     origin: 'top',
-    distance: '60px',
-    duration: 1000,
+    distance: '80px',
+    duration: 2000,
+
 
 //     reset: true
 });
 
-sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{});
-sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img');
+sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{ interval: 20});
+sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{ interval: 20});
 sr.reveal('.home__social-icon',{ interval: 20});
-sr.reveal('.skills__data, .work__img, .contact__input',{interval: 10});
+sr.reveal('.skills__box, .work__img, .contact__input',{ interval: 20});
