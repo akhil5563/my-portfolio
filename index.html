@@ -282,6 +282,23 @@ Managed cloud infrastructure using AWS DevOps tools, including extensive use of 
       <span class="work__skills">Skills: Python, SQL, REST APIs</span>
   </div>
 </div>
+
+
+<!-- FOVUS PROJECT -->
+<div class="work__item">
+  <img src="assets/img/project1.png" alt="Clinical Data Extraction">
+  <div class="work__info">
+      <h3 class="work__project-title">Web Application for Secure AWS S3 File Management</h3>
+      <p class="work__date">Aug 2022 - Dec 2022</p>
+      <p class="work__description">
+          Developed a responsive web application using React.js, designed to handle secure file uploads and data updates on AWS. The application features an interface with input text fields and file upload capabilities. Upon submission, files are securely uploaded to an S3 bucket via an AWS API Gateway endpoint, ensuring that no AWS credentials are hard-coded or stored insecurely.
+I successfully resolved CORS and authentication errors associated with the API Gateway. Post-upload, a Lambda function is triggered to log file and text data in DynamoDB, which manages the metadata for operations. The Lambda function then provisions an EC2 instance dynamically to update the file in the S3 bucket based on the input text. After the update, the EC2 instance is terminated.
+The entire AWS infrastructure, including API Gateway, Lambda functions, S3 buckets, DynamoDB, and temporary EC2 instances, was provisioned and managed using AWS CDK in TypeScript. This approach ensured a scalable, maintainable, and secure application architecture.
+      </p>
+      <span class="work__skills">Skills: TypeScript,AWS CDK,Amazon EC2,Amazon Dynamodb,Amazon S3,aws API Gateway,AWS Lambda,React.js</span>
+  </div>
+</div>
+
 </div>
 </section>
 
